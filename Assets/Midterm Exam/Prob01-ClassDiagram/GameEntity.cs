@@ -2,8 +2,26 @@ using UnityEngine;
 
 namespace MidtermExam.Prob01
 {
-    public class GameEntity
+    public class GameEntity : MonoBehaviour
     {
-        // TODO: Implement fields and methods according to Class Diagram
+        public string id;
+        public int damage;
+        private Vector3 position;
+        protected int health;
+
+        public virtual void Update()
+        {
+
+        }
+
+        public virtual void TakeDamage(int damage)
+        {
+            health -= damage;
+        }
+
+        private void Move(Vector3 direction)
+        {
+            position += direction;
+        }
     }
 }
